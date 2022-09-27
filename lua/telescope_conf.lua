@@ -13,6 +13,7 @@ require('telescope').setup{
         },
         ["n"] = {
           -- your custom normal mode mappings
+          --["<C-9>"] = "history"
         },
       },
     },

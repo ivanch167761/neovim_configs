@@ -1,4 +1,5 @@
 lua require('init')
+set autochdir
 set relativenumber
 set clipboard=unnamed
 set scrolloff=8
@@ -8,6 +9,7 @@ set shiftwidth=4
 set tabstop=4 softtabstop=4
 set expandtab
 set number
+set hidden
 set termguicolors
 set background=dark
 syntax on 
@@ -19,10 +21,19 @@ set completeopt=menu,menuone,noselect
 set splitright
 
 "split navigations
-nnoremap <A-j> <C-W><C-J>
-nnoremap <A-k> <C-W><C-K>
-nnoremap <A-l> <C-W><C-L>
-nnoremap <A-h> <C-W><C-H>
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+tnoremap <Esc> <C-\><C-n>
 inoremap jk <esc>
 
 noremap n nzzzv
@@ -102,6 +113,11 @@ let g:closetag_enable_react_fragment = 0
 
 
 
+
 nnoremap <C-_> <cmd>lua require("telescope_conf").current_buf() <cr>
 nnoremap <leader>ff :Telescope find_files<cr>
 nnoremap <leader>fb :Telescope file_browser<cr>
+nnoremap <leader>bb :Telescope buffers<cr>
+nnoremap <leader>rr :IronRestart <cr>
+nnoremap <leader>hh :IronHide <cr>
+nnoremap <leader>ff :IronFocus <cr>
