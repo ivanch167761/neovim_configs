@@ -12,7 +12,7 @@ iron.setup {
         command = {"zsh"}
       }
     },
-    repl_open_cmd = require('iron.view').right(function()
+    repl_open_cmd = require('iron.view').curry.right(function()
         return vim.o.columns / 2
     end),
     -- how the REPL window will be opened, the default is opening

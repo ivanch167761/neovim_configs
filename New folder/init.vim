@@ -1,5 +1,3 @@
-lua require('autoinstall')
-lua require('plugins')
 lua require('init')
 set autochdir
 set relativenumber
